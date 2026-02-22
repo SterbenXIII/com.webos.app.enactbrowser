@@ -41,7 +41,7 @@
     "@enact/ui": "^4.5.0",
     "@enact/webos": "^4.5.0",
     "ilib": "^14.6.0",
-    "js-browser-lib": "file:../../lib",
+    "js-browser-lib": "workspace:*",
     "prop-types": "^15.7.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
