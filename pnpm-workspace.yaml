@@ -1,0 +1,10 @@
+packages:
+  - '.'
+  - 'samples/enact-based'
+  - 'samples/pure-html'
+  - 'src'
+  - 'src/SiteFiltering'
+  - 'src/Utilities'
+
+onlyBuiltDependencies:
+  - core-js
