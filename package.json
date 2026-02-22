@@ -8,8 +8,8 @@
   "scripts": {
     "transpile": "./scripts/cli.js transpile"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@enact/cli": "^7.2.1",
     "babel-core": "~6.26.3",
     "babel-plugin-dev-expression": "~0.2.1",
     "babel-plugin-syntax-dynamic-import": "~6.18.0",
