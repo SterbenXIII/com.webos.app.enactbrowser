@@ -32,7 +32,7 @@ const defaultConfig = {
 };
 
 const AppDecorator = hoc(defaultConfig, (config, Wrapped) => {
-	return class extends React.Component {
+	class AppDecoratorInner extends React.Component {
 		static displayName = 'AppDecorator';
 
 		constructor (props) {
@@ -79,7 +79,8 @@ const AppDecorator = hoc(defaultConfig, (config, Wrapped) => {
 					/>
 			);
 		}
-	};
+	}
+	return AppDecoratorInner;
 });
 
 export default AppDecorator;

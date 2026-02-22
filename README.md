@@ -1,22 +1,27 @@
 # Summary
+
 A web browser for webOS Open Source Edition.
 
 # Description
+
 The browser is composed of two parts, 1) platform agnostic browser UI written on top of Enact framework and 2) a separate js library to support webview component, data binding, tab management policy, and platform-specific integration.
 
 # Features
-* Basic navigation via address bar, backward/forward button
-* History
-* Bookmark
-* Most visited sites
-* Recently closed sites
-* Preferences
-* Startup page selection
-* Search engine selection
-* Some customized layout options
+
+- Basic navigation via address bar, backward/forward button
+- History
+- Bookmark
+- Most visited sites
+- Recently closed sites
+- Preferences
+- Startup page selection
+- Search engine selection
+- Some customized layout options
 
 # Installation
+
 ## How to build
+
 Before building the app, the following tools and libraries are required:
 
 ```
@@ -31,32 +36,40 @@ npm install -g @enact/cli
 ```
 
 After you get all the tools and libraries, go to below path.
+
 ```
 com.webos.app.enactbrowser/samples/enact-based/
 ```
 
 Build the app with below command.
+
 ```
 npm run build
 ```
 
 ## How to set up development environment on PC
+
 This app is a chrome extension, you can load it to Chrome as a extension and run it on Chrome browser as well as inspect it.
-1) Build the app
-2) Load the built app on "chrome://extensions"
+
+1. Build the app
+2. Load the built app on "chrome://extensions"
 
 # Usage
+
 ## On target device
-1) Turn on the device
-2) Connect to the internet
-3) Press windows key to see the app list
-4) Click on "Web Browser" icon
+
+1. Turn on the device
+2. Connect to the internet
+3. Press windows key to see the app list
+4. Click on "Web Browser" icon
 
 ## On PC
-1) Launch Chrome and go to "chrome://apps"
-2) Launch the app named "Enact-based Browser Sample"
+
+1. Launch Chrome and go to "chrome://apps"
+2. Launch the app named "Enact-based Browser Sample"
 
 # Author
+
 - Mikyung Kim (mikyung27.kim@lge.com)
 - Alexey Domokurov (alexey.domokurov@lge.com)
 

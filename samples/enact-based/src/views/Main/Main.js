@@ -45,7 +45,6 @@ const TooltipButton = TooltipDecorator(
 const maxTab = 7;
 
 class Main extends Component {
-  static contextTypes = contextTypes;
 
   static propTypes = {
     store: PropTypes.any,
@@ -63,7 +62,7 @@ class Main extends Component {
     };
 
     this.fullScreenContentItem = React.createRef();
-    if (typeof chrome === "object" && chrome.app.launchArgs) {
+    if (typeof chrome === "object" && chrome.app && chrome.app.launchArgs) {
       const launchArgs = JSON.parse(chrome.app.launchArgs);
       if (launchArgs.fullMode) {
         this.state.fullScreen = true;
@@ -73,7 +72,9 @@ class Main extends Component {
 
   componentDidMount() {
     //Event listener "detectMedia" function is registered for listening to media detection event.
-    window.navigator.userpermission.onshowprompt = this.detectMedia;
+    if (window.navigator && window.navigator.userpermission) {
+      window.navigator.userpermission.onshowprompt = this.detectMedia;
+    }
 
     const browser = new Browser(this.props.store, maxTab);
     // eslint-disable-next-line react/no-did-mount-set-state
@@ -122,7 +123,13 @@ class Main extends Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener("webOSRelaunch");
+    if (window.navigator && window.navigator.userpermission) {
+      window.navigator.userpermission.onshowprompt = null;
+    }
+    document.removeEventListener("dialog", this.onDialog);
+    document.removeEventListener("webOSRelaunch", this.onRelaunch);
+    document.removeEventListener("webOSLocaleChange", this.onLocaleChange);
+    document.removeEventListener("shiftContent", this.onShiftContent);
   }
 
   getSelectedWebview = () => {

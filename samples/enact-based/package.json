@@ -49,6 +49,7 @@
     "redux": "^4.0.5"
   },
   "devDependencies": {
+    "@babel/runtime": "^7.28.6",
     "minimist": "^1.2.5"
   }
 }
